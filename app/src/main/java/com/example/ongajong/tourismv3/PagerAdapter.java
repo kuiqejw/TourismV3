@@ -25,11 +25,13 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
                 LocateFrag tab1 = new LocateFrag();
                 return tab1;
             case 1:
-                TravelFrag tab2 = new TravelFrag();
+                AttractionFrag tab2 = new AttractionFrag();
                 return tab2;
             case 2:
                 WeatherFrag tab3 = new WeatherFrag();
                 return tab3;
+           /* case 3:
+                AttractionFrag tab4 = new AttractionFrag();*/
             default:
                 return null;
         }

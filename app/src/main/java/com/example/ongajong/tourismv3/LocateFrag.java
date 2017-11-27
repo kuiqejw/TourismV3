@@ -59,14 +59,14 @@ public class LocateFrag extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View inflatedView = inflater.inflate(R.layout.activity_maps,container, false);
-        result_bar = (TextView) inflatedView.findViewById(R.id.results);
-        rmap = (RadioButton) inflatedView.findViewById(R.id.map_view);
-        rsat = (RadioButton) inflatedView.findViewById(R.id.sat_view);
-        rhyb = (RadioButton) inflatedView.findViewById(R.id.hybrid_view);
+        result_bar = inflatedView.findViewById(R.id.results);
+        rmap = inflatedView.findViewById(R.id.map_view);
+        rsat = inflatedView.findViewById(R.id.sat_view);
+        rhyb = inflatedView.findViewById(R.id.hybrid_view);
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
-        searchQ = (EditText) inflatedView.findViewById(R.id.ed_Search);
-        btn_search = (Button) inflatedView.findViewById(R.id.btn_search);
+        searchQ = inflatedView.findViewById(R.id.ed_Search);
+        btn_search = inflatedView.findViewById(R.id.btn_search);
         btn_search.setOnClickListener(
                 new View.OnClickListener(){
                     public void onClick(View view){
@@ -76,21 +76,6 @@ public class LocateFrag extends Fragment implements OnMapReadyCallback {
                     }
                 }
         );
-        //searchView = (FloatingSearchView) getActivity().findViewById(R.id.floating_search_view);
-        /*searchView.setOnSearchListener(new FloatingSearchView.OnSearchListener(){
-            @Override
-            public void onSuggestionClicked(SearchSuggestion searchSuggestion) {
-                //loathsome need to clear the variable
-                Log.i("Do", "Nothing");
-            }
-
-            @Override
-            public void onSearchAction(String query){
-                input = searchView.getQuery();
-                result = compare(dictionary,input);
-                result_bar.setText(result);
-            }}
-        );*/
         rmap.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 if (v==rmap){
@@ -121,15 +106,17 @@ public class LocateFrag extends Fragment implements OnMapReadyCallback {
         return inflatedView;
     }
 
-    public String compare(String[][] dictionary, String input) {//This is the regex expression
+    public String compare(String[][] dictionary, String input) {//This is the regex expression. Brute-forcing Levehstein Distance
         //todo replace this with suitable regex comparison
+        //taken from
         String val = "";
         int distance = 0;
         int min = 100;
         int list_no = 0;
         for(int i = 0; i<dictionary.length; i++) {
             for (String str : dictionary[i]) {
-                distance = LD(str, input);
+                //distance = LD(str, input);
+                distance = distance(str, input);
                 if (min > distance) {
                     min = distance;
                     list_no = i;
@@ -139,7 +126,7 @@ public class LocateFrag extends Fragment implements OnMapReadyCallback {
         lat = Double.parseDouble(dictionary[list_no][1]);
         lng = Double.parseDouble(dictionary[list_no][2]);
         if ((input.length()<5 && min>4) || min >= input.length() - 1 || min>7){
-            Toast.makeText(getContext(),"No match found", Toast.LENGTH_LONG).show();
+            Toast.makeText(getContext(),"No match found", Toast.LENGTH_SHORT).show();
             return "";
         }
         else val = dictionary[list_no][0];
@@ -151,79 +138,27 @@ public class LocateFrag extends Fragment implements OnMapReadyCallback {
         return val;
     }
 
-    public int LD(String s, String t) {
-        int d[][];
-        int n,m,i,j,cost;
-        char s_i;
-        char t_j;
 
-        // Step 1
-
-        n = s.length();
-        m = t.length();
-        if (n == 0) {
-            return m;
-        }
-        if (m == 0) {
-            return n;
-        }
-        d = new int[n + 1][m + 1];
-
-        // Step 2
-
-        for (i = 0; i <= n; i++) {
-            d[i][0] = i;
-        }
-
-        for (j = 0; j <= m; j++) {
-            d[0][j] = j;
-        }
-
-        // Step 3
-
-        for (i = 1; i <= n; i++) {
-
-            s_i = s.charAt(i - 1);
-
-            // Step 4
-
-            for (j = 1; j <= m; j++) {
-
-                t_j = t.charAt(j - 1);
-
-                // Step 5
-
-                if (s_i == t_j) {
-                    cost = 0;
-                } else {
-                    cost = 1;
-                }
-
-                // Step 6
-
-                d[i][j] = Minimum(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
-
+    //taken from rosetta code
+    public static int distance(String a, String b) {
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+        // i == 0
+        int [] costs = new int [b.length() + 1];
+        for (int j = 0; j < costs.length; j++)
+            costs[j] = j;
+        for (int i = 1; i <= a.length(); i++) {
+            // j == 0; nw = lev(i - 1, j)
+            costs[0] = i;
+            int nw = i - 1;
+            for (int j = 1; j <= b.length(); j++) {
+                int cj = Math.min(1 + Math.min(costs[j], costs[j - 1]), a.charAt(i - 1) == b.charAt(j - 1) ? nw : nw + 1);
+                nw = costs[j];
+                costs[j] = cj;
             }
-
         }
-
-        // Step 7
-
-        return d[n][m];
-
+        return costs[b.length()];
     }
-
-    private int Minimum(int a, int b, int c) {
-        int mi;
-
-        mi = a;
-        if (b < mi) mi = b;
-        if (c < mi) mi = c;
-
-        return mi;
-    }
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
