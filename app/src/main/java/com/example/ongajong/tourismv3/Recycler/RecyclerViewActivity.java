@@ -4,15 +4,13 @@ package com.example.ongajong.tourismv3.Recycler;
  * Created by ongajong on 27/11/2017.
  */
 
-/**
- * Created by ongajong on 26/11/2017.
- */
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+/*
 import com.example.ongajong.tourismv3.R;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,4 +52,4 @@ public class RecyclerViewActivity extends Activity {
         AlbumAdaptor adapter = new AlbumAdaptor((ArrayList<Album>) destinations);
         rv.setAdapter(adapter);
     }
-}
+}*/

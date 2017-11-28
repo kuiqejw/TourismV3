@@ -1,20 +1,12 @@
-/*
-package com.example.ongajong.tourismv3.Recycler;
+package com.example.ongajong.tourismv3;
 
-*/
 /**
  * Created by ongajong on 27/11/2017.
- *//*
+ */
 
-
-import java.util.ArrayList;
-import java.util.List;
-
-*/
 /**
  * Created by ongajong on 26/11/2017.
- *//*
-
+ */
 
 public class Album {
     String name;
@@ -26,4 +18,3 @@ public class Album {
     }
 
 }
-*/

@@ -14,16 +14,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        TabLayout tabLayout = findViewById(R.id.tab_layout);
+        tabLayout.addTab(tabLayout.newTab().setText("Locate"));
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        tabLayout.addTab(tabLayout.newTab().setText("Attractions"));
+        //tabLayout.addTab(tabLayout.newTab().setText("Travel"));
+        tabLayout.addTab(tabLayout.newTab().setText("Weather"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+//get the View Pager and set it's Pager Adapter so that it can display items
+        final ViewPager viewPager = findViewById(R.id.pager);
         final PagerAdapter adapter = new PagerAdapter
                 (getSupportFragmentManager(), tabLayout.getTabCount());
         viewPager.setAdapter(adapter);

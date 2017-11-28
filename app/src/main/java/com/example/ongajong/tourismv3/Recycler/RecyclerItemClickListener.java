@@ -1,8 +1,11 @@
+/*
 package com.example.ongajong.tourismv3.Recycler;
 
+*/
 /**
  * Created by ongajong on 26/11/2017.
- */
+ *//*
+
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -53,4 +56,4 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
 
     @Override
     public void onRequestDisallowInterceptTouchEvent (boolean disallowIntercept){}
-}
+}*/

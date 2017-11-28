@@ -1,5 +1,8 @@
+/*
 package com.example.ongajong.tourismv3.Recycler;
+*/
 
+/*
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -52,7 +55,8 @@ public class AlbumAdaptor extends RecyclerView.Adapter<AlbumAdaptor.AlbumViewHol
     public void onBindViewHolder(AlbumViewHolder personViewHolder, final int i) {
         personViewHolder.destinationname.setText(destinations.get(i).name);
         personViewHolder.destinationphoto.setImageResource(destinations.get(i).photoId);
-        /*personViewHolder.itemView.setOnClickListener(new View.OnClickListener(){
+        */
+/*personViewHolder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 String dest = destinations.get(i).name;
@@ -84,7 +88,8 @@ public class AlbumAdaptor extends RecyclerView.Adapter<AlbumAdaptor.AlbumViewHol
                         break;
                 }
             }
-        });*/
+        });*//*
+
     }
 
     @Override
@@ -93,3 +98,4 @@ public class AlbumAdaptor extends RecyclerView.Adapter<AlbumAdaptor.AlbumViewHol
         return destinations== null ? 0 : destinations.size();
     }
 }
+*/
