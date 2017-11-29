@@ -62,11 +62,10 @@ public class TravelFrag extends Fragment {
                     result.append("\n Buddha");
                     locations.add("BuddhaToothRelicTemple");
                 }
-                result.append("\n Fast Total: "+ fare);
                 //Display on Toast
-                Toast.makeText(getActivity(),result.toString(),Toast.LENGTH_LONG).show();
-                String result2 = trialrun.brute(locations,newBudget);
-                itinery.setText(newBudget.toString());
+                //Toast.makeText(getActivity(),result.toString(),Toast.LENGTH_LONG).show();
+                String result2 = trialrun.fast(locations,newBudget);
+                itinery.setText(result2);
 
 
             }
@@ -96,9 +95,9 @@ public class TravelFrag extends Fragment {
                 }
                 result.append("\n Slow Total: "+ fare);
                 //Display on Toast
-                Toast.makeText(getActivity(),result.toString(),Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(),result.toString(),Toast.LENGTH_LONG).show();
                 String result2 = trialrun.brute(locations,newBudget);
-                itinery.setText(newBudget.toString());
+                itinery.setText(result2);
 
 
             }

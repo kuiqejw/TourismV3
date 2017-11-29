@@ -22,6 +22,9 @@ public class trialrun{
         System.out.println(startnode.possible.get(destina.BuddhaToothRelicTemple).get(movetype.BUSTR).cost);
         LinkedList<Object> answer = brute.findans(master,startnode,budget);
         LinkedList<move> truth = (LinkedList<move>) answer.get(0);
+        String s = debugprintjourney.print(truth);
+
+        /*
         LinkedList<destina> destinations = Destinationorder.get(truth);
         LinkedList<String> movements = movetypetranslate.doo(typeofmoves.doo(truth));
         LinkedList<Double> costs = costlist.doo(truth);
@@ -45,9 +48,9 @@ public class trialrun{
             s+=" (";
             s+=c;
             s+=") \n ";
-            counter+=1;
+            counter+=1;*/
 
-        }
+        //}
         return s;
     }
     public static String fast(LinkedList<String> places, double budget){
@@ -67,6 +70,9 @@ public class trialrun{
         parlourtrick trick = new parlourtrick();
         LinkedList<Object> answer = trick.mental(master,startnode,budget);
         LinkedList<move> truth = (LinkedList<move>) answer.get(0);
+
+        String s = debugprintjourney.print(truth);
+        /*
         LinkedList<destina> destinations = Destinationorder.get(truth);
         LinkedList<String> movements = movetypetranslate.doo(typeofmoves.doo(truth));
         LinkedList<Double> costs = costlist.doo(truth);
@@ -92,7 +98,7 @@ public class trialrun{
             s+=") \n ";
             counter+=1;
 
-        }
+        }*/
         return s;
 
 
