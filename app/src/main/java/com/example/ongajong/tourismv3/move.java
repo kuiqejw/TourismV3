@@ -1,6 +1,5 @@
-package com.example.ongajong.tourismv3.Kwik;
+package com.example.ongajong.tourismv3;
 
-import static jdk.nashorn.internal.objects.Global.Infinity;
 
 public class move{
 	public movetype type; //type of movement
@@ -28,7 +27,7 @@ public class move{
 			this.towards = destination;
 			this.type = what;
 			this.time = time;
-			this.efficiency = Infinity; //There is nothing to calculate in terms of wallet efficiency here.
+			this.efficiency = 1000000000.00; //There is nothing to calculate in terms of wallet efficiency here.
 		}
 	}
 	

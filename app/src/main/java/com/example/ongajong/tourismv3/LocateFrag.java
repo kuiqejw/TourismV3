@@ -171,7 +171,7 @@ public class LocateFrag extends Fragment implements OnMapReadyCallback {
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or com.example.ongajong.tourismv3.Kwik.move the camera. In this case,
+     * This is where we can add markers or lines, add listeners or com.example.ongajong.tourismv3.move the camera. In this case,
      * we just add a marker near Sydney, Australia.
      * If Google Play services is not installed on the device, the user will be prompted to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
@@ -180,7 +180,7 @@ public class LocateFrag extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        // Add a marker in Sydney and com.example.ongajong.tourismv3.Kwik.move the camera
+        // Add a marker in Sydney and com.example.ongajong.tourismv3.move the camera
         mMap.addMarker(new MarkerOptions().position(latlng));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latlng));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);

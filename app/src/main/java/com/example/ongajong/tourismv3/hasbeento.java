@@ -1,4 +1,4 @@
-package com.example.ongajong.tourismv3.Kwik;
+package com.example.ongajong.tourismv3;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -19,7 +19,7 @@ public class hasbeento {
             if(here.contains(as)){} //if destination has been visited do nothing
             else{answer.add(places.get(as));} //add to answer
         }
-        /*for(com.example.ongajong.tourismv3.Kwik.node annn: answer){
+        /*for(com.example.ongajong.tourismv3.node annn: answer){
             System.out.print(annn.name + " ");
         }
         System.out.println(" - has beento");*/

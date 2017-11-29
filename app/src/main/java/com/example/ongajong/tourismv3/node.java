@@ -1,10 +1,10 @@
-package com.example.ongajong.tourismv3.Kwik;
+package com.example.ongajong.tourismv3;
 
 import java.util.HashMap;
 
-//a com.example.ongajong.tourismv3.Kwik.node maker for the family. Do not use unless required.
-//this com.example.ongajong.tourismv3.Kwik.node is more of a consideration com.example.ongajong.tourismv3.Kwik.node.
-// in other words, there is a single com.example.ongajong.tourismv3.Kwik.node that states
+//a com.example.ongajong.tourismv3.node maker for the family. Do not use unless required.
+//this com.example.ongajong.tourismv3.node is more of a consideration com.example.ongajong.tourismv3.node.
+// in other words, there is a single com.example.ongajong.tourismv3.node that states
 public class node{
 	public HashMap<destina,HashMap<movetype,move>> possible;
 	public destina name;

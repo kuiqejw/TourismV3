@@ -1,0 +1,5 @@
+MarinaBaySands 14 4.32 6 0.83 17
+VivoCity 81 7.84 13 1.26 31
+ResortsWorldSentosa 88 9.38 18 4.03 38
+BuddhaToothRelicTemple 39 4.76 8 0.98 24
+Zoo 264 18.18 29 1.89 85

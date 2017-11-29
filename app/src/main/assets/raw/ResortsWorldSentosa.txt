@@ -1,0 +1,5 @@
+MarinaBaySands 76 8.74 13 1.18 33
+SingaporeFlyer 88 8.40 14 1.26 38
+VivoCity 12 3.22 4 0.0 10
+BuddhaToothRelicTemple 55 6.64 12 0.98 27
+Zoo 285 22.8 32 1.99 92

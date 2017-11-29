@@ -1,11 +1,11 @@
-package com.example.ongajong.tourismv3.Kwik;
+package com.example.ongajong.tourismv3;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 
 public class parlourtrick {
     // a crude parlour trick designed to reduce time taken to complete the trip while utilising the budget to it's maximum
-    //utilise a linkedlist to list all efficiencies of taxi com.example.ongajong.tourismv3.Kwik.move. All taxi moves are shortest possible...
+    //utilise a linkedlist to list all efficiencies of taxi com.example.ongajong.tourismv3.move. All taxi moves are shortest possible...
     //or longest possible. Depends if i pretend that taxi moves have a basic start fare. the issue however is that not all
     //longest should be translated...
     //then again, max time taxi should be taken at all times because it means it was the longest travel time.
@@ -30,7 +30,7 @@ public class parlourtrick {
             reference.put(a.name,a);
         }
         for(destina a: locations){
-            try{hold.add(reference.get(start.name).possible.get(a).get(movetype.TAXI)); }//obtain all moves possible from the start com.example.ongajong.tourismv3.Kwik.node.
+            try{hold.add(reference.get(start.name).possible.get(a).get(movetype.TAXI)); }//obtain all moves possible from the start com.example.ongajong.tourismv3.node.
             catch(NullPointerException e){} //do nothing. This is bound to happen due to the start location being included inside the locations.
         }
         move efficient = new move(null,1.0,movetype.TAXI,1000000); //target, cost, taxi, time. Maximise inefficiency here.
@@ -63,7 +63,7 @@ public class parlourtrick {
             locations.remove(locations.indexOf(remove));//remove destination from allowed destination
         } //The above for loop is iterated till all places are visited. Now just to home run back. (GREEDY ON EFFICIENCY)
         journey.add(reference.get(journey.getLast().towards).possible.get(start.name).get(movetype.TAXI));
-        //get the last com.example.ongajong.tourismv3.Kwik.move back. it's a taxi ride back to the hotel.
+        //get the last com.example.ongajong.tourismv3.move back. it's a taxi ride back to the hotel.
 
         //Now to check if budget is overshot
         double summer =0;
@@ -104,8 +104,8 @@ public class parlourtrick {
                 indexofworst = journey.indexOf(worst); //obtain the index of the worst efficiency.
                 if(indexofworst==0){set= start.name;} //obtain previous location
                 else{set = journey.get(indexofworst-1).towards;} //obtain previous location
-                journey.remove(indexofworst); //remove previous bad com.example.ongajong.tourismv3.Kwik.move
-                journey.add(indexofworst,reference.get(set).possible.get(worst.towards).get(movetype.BUSTR)); //change the type to bus/train for that com.example.ongajong.tourismv3.Kwik.move
+                journey.remove(indexofworst); //remove previous bad com.example.ongajong.tourismv3.move
+                journey.add(indexofworst,reference.get(set).possible.get(worst.towards).get(movetype.BUSTR)); //change the type to bus/train for that com.example.ongajong.tourismv3.move
                 //add it to the journey at that location
 
 
@@ -129,7 +129,7 @@ public class parlourtrick {
                     else {
                         set = journey.get(indexofworst - 1).towards;
                     } //obtain previous location
-                    journey.remove(indexofworst); //remove previous bad com.example.ongajong.tourismv3.Kwik.move
+                    journey.remove(indexofworst); //remove previous bad com.example.ongajong.tourismv3.move
                     journey.add(indexofworst, reference.get(set).possible.get(changetowalk.towards).get(movetype.FOOT));
                     //greedy for lowest cost.
                     summer=0;

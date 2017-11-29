@@ -1,0 +1,5 @@
+MarinaBaySands 69 8.30 12 1.18 24
+SingaporeFlyer 81 7.96 14 1.26 29
+ResortsWorldSentosa 12 4.54 9 2.00 10
+BuddhaToothRelicTemple 47 6.42 11 0.98 18
+Zoo 270 22.58 31 1.99 85

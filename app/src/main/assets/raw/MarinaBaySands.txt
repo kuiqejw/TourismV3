@@ -1,0 +1,5 @@
+SingaporeFlyer 14 3.22 3 0.83 17
+VivoCity 69  6.96 14 1.18 26
+ResortsWorldSentosa 76 8.50 19 4.03 35
+BuddhaToothRelicTemple 28 4.98 8 0.88 19
+Zoo 269 18.40 30 1.96 84

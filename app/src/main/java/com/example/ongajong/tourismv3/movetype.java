@@ -1,4 +1,4 @@
-package com.example.ongajong.tourismv3.Kwik;
+package com.example.ongajong.tourismv3;
 
 enum movetype{
     FOOT, // walk

@@ -35,7 +35,6 @@
                 <CheckBox
                     android:id="@+id/checkBoxBuddha"
                     android:layout_gravity="center"
-                    android:checked="true"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -56,7 +55,6 @@
                 <CheckBox
                     android:id="@+id/checkBoxSentosa"
                     android:layout_gravity="center"
-                    android:checked="true"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -76,7 +74,6 @@
                 <CheckBox
                     android:id="@+id/checkBoxFlyer"
                     android:layout_gravity="center"
-                    android:checked="true"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -96,7 +93,6 @@
                 <CheckBox
                     android:id="@+id/checkBoxVivocity"
                     android:layout_gravity="center"
-                    android:checked="true"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -116,7 +112,6 @@
                 <CheckBox
                     android:id="@+id/checkBoxZoo"
                     android:layout_gravity="center"
-                    android:checked="true"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1" />
@@ -138,7 +133,7 @@
                     android:id="@+id/Budget"
                     android:layout_width="97dp"
                     android:layout_height="wrap_content"
-                    android:text="Budget" />
+                    android:text="10.00" />
                 <Button
                     android:id="@+id/btn_FastSearch"
                     android:layout_width="wrap_content"
