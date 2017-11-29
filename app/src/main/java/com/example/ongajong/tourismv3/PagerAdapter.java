@@ -32,9 +32,9 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
             case 2:
                 WeatherFrag tab3 = new WeatherFrag();
                 return tab3;
-            /*case 3:
-                AttractionFrag tab4 = new AttractionFrag();
-                return tab4;*/
+            case 3:
+               TravelFrag tab4 = new TravelFrag();
+                return tab4;
             default:
                 return null;
         }

@@ -6,4 +6,11 @@
     <string name="map_view">Map View</string>
     <string name="satellite_view">Satellite View</string>
     <string name="hybrid_view">Hybrid View</string>
+    <string name="botanic_gardens">Botanic Gardens</string>
+    <string name="buddha_tooth_relic_temple">Buddha Tooth Relic Temple</string>
+    <string name="gardens_by_the_bay">Gardens by the Bay</string>
+    <string name="universal_studios_singapore">Universal Studios Singapore</string>
+    <string name="singapore_flyer">Singapore Flyer</string>
+    <string name="singapore_zoo">Singapore Zoo</string>
+    <string name="Vivocity">Vivocity</string>
 </resources>

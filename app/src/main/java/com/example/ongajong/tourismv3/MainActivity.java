@@ -22,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Locate"));
 
         //tabLayout.addTab(tabLayout.newTab().setText("Attractions"));
-        tabLayout.addTab(tabLayout.newTab().setText("Travel"));
+        tabLayout.addTab(tabLayout.newTab().setText("Attraction"));
         tabLayout.addTab(tabLayout.newTab().setText("Weather"));
+        tabLayout.addTab(tabLayout.newTab().setText("Travel"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 //get the View Pager and set it's Pager Adapter so that it can display items
         final ViewPager viewPager = findViewById(R.id.pager);

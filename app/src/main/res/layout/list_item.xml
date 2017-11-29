@@ -17,16 +17,13 @@
         android:id="@+id/itemImage"
         />
     <TextView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#333333"
+        android:textColor="#212121"
         android:text="Photo Title"
         android:id="@+id/itemText"
-        android:textSize="22sp"
+        android:textSize="16dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginLeft="5dp"
-        android:layout_weight="3"
-        android:layout_margin="22dp"/>
+        android:layout_marginLeft="5dp" />
 
 </LinearLayout>

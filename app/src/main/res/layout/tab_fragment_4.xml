@@ -1,15 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="15dp"
     android:orientation="vertical">
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="52dp"
         android:layout_centerInParent="true"
-        android:text="Tab 4"
-        android:textAppearance="?android:attr/textAppearanceLarge"/>
+        android:text="Pick your Destinations"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                android:orientation = "horizontal"
+
+                <CheckedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:text="@string/buddha_tooth_relic_temple" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxBuddha"
+                    android:layout_gravity="center"
+                    android:checked="true"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                android:orientation = "horizontal"
+
+                <CheckedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:text="@string/universal_studios_singapore" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSentosa"
+                    android:layout_gravity="center"
+                    android:checked="true"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                android:orientation = "horizontal"
+
+                <CheckedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:text="@string/singapore_flyer" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxFlyer"
+                    android:layout_gravity="center"
+                    android:checked="true"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                android:orientation = "horizontal"
+
+                <CheckedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:text="@string/Vivocity" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxVivocity"
+                    android:layout_gravity="center"
+                    android:checked="true"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                android:orientation = "horizontal"
+
+                <CheckedTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                    android:text="@string/singapore_zoo" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxZoo"
+                    android:layout_gravity="center"
+                    android:checked="true"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="22dp"
+                android:id="@+id/price"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/Budget"
+                    android:layout_width="97dp"
+                    android:layout_height="wrap_content"
+                    android:text="Budget" />
+                <Button
+                    android:id="@+id/btn_FastSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Quick Solver" />
+                <Button
+                    android:id="@+id/btn_SlowSearch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Slow Solver" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Itinery here"
+                android:textSize="22dp"
+                android:id="@+id/itinery"
+                android:textAlignment="center"
+                android:layout_gravity="center_horizontal" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+
+</LinearLayout>
