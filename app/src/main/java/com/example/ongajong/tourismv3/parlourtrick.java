@@ -60,6 +60,8 @@ public class parlourtrick {
             }
             journey.add(efficient);
             destina remove = efficient.towards;
+            System.out.println("sauifhas");
+            System.out.println(efficient.towards);
             locations.remove(locations.indexOf(remove));//remove destination from allowed destination
         } //The above for loop is iterated till all places are visited. Now just to home run back. (GREEDY ON EFFICIENCY)
         journey.add(reference.get(journey.getLast().towards).possible.get(start.name).get(movetype.TAXI));

@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 
 public class trialrun{
-    public static String brute(LinkedList<String> places, double budget){
+    public static LinkedList<Object> brute(LinkedList<String> places, double budget){
         //name price
         //Singapore Flyer $2.33 Bus
         //Take a METHODOFTRANSPORT from DESTINATION1 to DESTINATION2 (COST)
@@ -22,7 +22,13 @@ public class trialrun{
         System.out.println(startnode.possible.get(destina.BuddhaToothRelicTemple).get(movetype.BUSTR).cost);
         LinkedList<Object> answer = brute.findans(master,startnode,budget);
         LinkedList<move> truth = (LinkedList<move>) answer.get(0);
+        LinkedList<Object> popme = new LinkedList<>();
         String s = debugprintjourney.print(truth);
+        popme.add(s);
+        popme.add(answer.get(1));
+        popme.add(answer.get(2));
+        //String s = debugprintjourney.print(truth);
+
 
         /*
         LinkedList<destina> destinations = Destinationorder.get(truth);
@@ -51,9 +57,9 @@ public class trialrun{
             counter+=1;*/
 
         //}
-        return s;
+        return popme;
     }
-    public static String fast(LinkedList<String> places, double budget){
+    public static LinkedList<Object> fast(LinkedList<String> places, double budget){
         //name price
         //Singapore Flyer $2.33 Bus
         //Take a METHODOFTRANSPORT from DESTINATION1 to DESTINATION2 (COST)
@@ -62,16 +68,23 @@ public class trialrun{
         //destinationorder +translator
         //computecost&computetime
         LinkedList<node> master = new LinkedList<>();
+        master.clear();
         for(String s: places){
             node nodes = iteratetoadd.add(s);
             master.add(nodes);
+        }
+        for(node s: master){
+            System.out.println(s.name);
         }
         node startnode = iteratetoadd.add("MarinaBaySands");
         parlourtrick trick = new parlourtrick();
         LinkedList<Object> answer = trick.mental(master,startnode,budget);
         LinkedList<move> truth = (LinkedList<move>) answer.get(0);
-
+        LinkedList<Object> popme = new LinkedList<>();
         String s = debugprintjourney.print(truth);
+        popme.add(s);
+        popme.add(answer.get(1));
+        popme.add(answer.get(2));
         /*
         LinkedList<destina> destinations = Destinationorder.get(truth);
         LinkedList<String> movements = movetypetranslate.doo(typeofmoves.doo(truth));
@@ -99,7 +112,7 @@ public class trialrun{
             counter+=1;
 
         }*/
-        return s;
+        return popme;
 
 
 

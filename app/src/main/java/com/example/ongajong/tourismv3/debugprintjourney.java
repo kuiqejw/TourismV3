@@ -7,15 +7,15 @@ public class debugprintjourney {
         String s = "";
         System.out.println("DEBUGPRINT");
         for(move ooop : a){
-            s+= "Destintion: ";
+            s+= "\n Destination: ";
             s+= ooop.towards;
             s+= " Transport: ";
             s+= ooop.type;
-            s+= " Cost: ";
-            s+= ooop.cost;
+            s+= " Cost: $";
+            s+= String.format("%.2f", ooop.cost);
             s += " Time: ";
             s+= ooop.time;
-            s += "\n";
+            s += "min \n";
             System.out.print(ooop.towards);
             System.out.print(" ");
             System.out.print(ooop.type);

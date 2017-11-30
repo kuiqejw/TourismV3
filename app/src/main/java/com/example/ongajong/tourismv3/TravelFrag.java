@@ -3,6 +3,7 @@ package com.example.ongajong.tourismv3;
 /**
  * Created by ongajong on 27/11/2017.
  */
+import android.annotation.SuppressLint;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -45,6 +46,7 @@ public class TravelFrag extends Fragment {
                 int fare = 0;
                 StringBuilder result = new StringBuilder();
                 Double newBudget = Double.parseDouble(budget.getText().toString());
+                locations.clear();
                 result.append("SelectedItems:");
                 if (SingaporeFlyer.isChecked()){
                     result.append("\n Singapore Flyer Added");
@@ -62,18 +64,26 @@ public class TravelFrag extends Fragment {
                     result.append("\n Buddha");
                     locations.add("BuddhaToothRelicTemple");
                 }
+                if (locations.isEmpty()){
+                    Toast.makeText(getActivity(),"No location selected", Toast.LENGTH_LONG).show();
+                }
                 //Display on Toast
                 //Toast.makeText(getActivity(),result.toString(),Toast.LENGTH_LONG).show();
-                String result2 = trialrun.fast(locations,newBudget);
-                itinery.setText(result2);
+                else{LinkedList<Object> ans = trialrun.fast(locations,newBudget);
+                String total = ans.get(1).toString();
+                String total1 = ans.get(2).toString();
+                String total2 = ans.get(0).toString();
+                itinery.setText("$" +total+" Time: " +total1+ " min Route: "+total2);}
 
 
             }
         });
         btn_slow.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
                 int fare = 0;
+                locations.clear();
                 StringBuilder result = new StringBuilder();
                 Double newBudget = Double.parseDouble(budget.getText().toString());
                 result.append("SelectedItems:");
@@ -94,10 +104,16 @@ public class TravelFrag extends Fragment {
                     locations.add("BuddhaToothRelicTemple");
                 }
                 result.append("\n Slow Total: "+ fare);
+                if (locations.isEmpty()){
+                    Toast.makeText(getActivity(),"No location selected", Toast.LENGTH_LONG).show();
+                }
                 //Display on Toast
                 //Toast.makeText(getActivity(),result.toString(),Toast.LENGTH_LONG).show();
-                String result2 = trialrun.brute(locations,newBudget);
-                itinery.setText(result2);
+                else{LinkedList<Object> ans = trialrun.brute(locations,newBudget);
+                String total = String.format("%.2f",ans.get(1));
+                String total1 = ans.get(2).toString();
+                String total2 = ans.get(0).toString();
+                itinery.setText("$" +total+" Time: " +total1+ " min Route: "+total2);}
 
 
             }
